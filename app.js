@@ -14,7 +14,7 @@ const messageIdEl = document.getElementById("messageId")
 
 const listEl = document.getElementById("list");
 const submitButtonEl = document.getElementById("submitButton");
-const buyEl = document.getElementById("buy");
+
 let sectionEl = document.getElementById("section");
 
 
@@ -53,8 +53,8 @@ fetch('https://fakestoreapi.com/products')
                    <p> Rating: ${shop.rating.rate } </p>
                     <p> Count: ${shop.rating.count} </p>
                    
-<input type="button" value"add to cart " class="btn" onclick="createOrder ()">
-<button  onclick="createOrder('${shop.id}')">Välj</button>
+<input type="button" value"add to cart " class="btn" onclick="addToCart('${shop.id}')">
+<button  onclick="addToCart('${shop.id}')">Välj</button>
 
                     <p id='messageId'></p>              
                <hr>     
@@ -68,6 +68,16 @@ fetch('https://fakestoreapi.com/products')
                 
               }
 
+
+              function addToCart (id){
+                console.log("Är jag här?")
+                console.log("Ditt id: " +id)
+                productIdEl.innerHTML = "Ditt id: "
+
+
+
+              }
+
              
        // Skapa ny order
               function createOrder (id){
@@ -75,14 +85,12 @@ fetch('https://fakestoreapi.com/products')
                 console.log("kom jag in nu då igen?")
                 console.log(id)
                 
-                
-               
                 let userName = userNameEl.value;
                 let userAdress = userAdressEl.value;
                 let userMail =  userMailEl.value;
               
                
-                  messageEl.innerHTML += "Grattis " + userName  + "! Din order beräknas ankomma inom tre arbetsdagar." ;
+                  messageEl.innerHTML += "Grattis " + "! Din order beräknas ankomma inom tre arbetsdagar." ;
                
                 names.push(userName);            
                
@@ -183,7 +191,7 @@ fetch('https://fakestoreapi.com/products')
                  })
                   //  location.reload();
 
-                  // setTimeout(() => location.reload(), 2000);  // Ladda om sidan efter 2 sekunder (2000 millisekunder)
+                   setTimeout(() => location.reload(), 2000);  // Ladda om sidan efter 2 sekunder (2000 millisekunder)
                   deleteMessageEl.innerHTML = "Order deleted";
                 }
               
