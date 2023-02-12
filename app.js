@@ -53,8 +53,8 @@ fetch('https://fakestoreapi.com/products')
                    <p> Rating: ${shop.rating.rate } </p>
                     <p> Count: ${shop.rating.count} </p>
                    
-<input type="button" value"add to cart " class="btn" onclick="addToCart('${shop.id}')">
-<button  onclick="addToCart('${shop.id}')">Välj</button>
+<input type="button" value"add to cart " class="btn" onclick="createOrder ()">
+<button  onclick="createOrder('${shop.id}')">Välj</button>
 
                     <p id='messageId'></p>              
                <hr>     
@@ -68,15 +68,7 @@ fetch('https://fakestoreapi.com/products')
                 
               }
 
-
-              function addToCart (id){
-                console.log("Är jag här?")
-                console.log("Ditt id: " +id)
-                productIdEl.innerHTML = "Ditt id: "
-
-
-
-              }
+              
 
              
        // Skapa ny order
@@ -191,7 +183,7 @@ fetch('https://fakestoreapi.com/products')
                  })
                   //  location.reload();
 
-                   setTimeout(() => location.reload(), 2000);  // Ladda om sidan efter 2 sekunder (2000 millisekunder)
+                  // setTimeout(() => location.reload(), 2000);  // Ladda om sidan efter 2 sekunder (2000 millisekunder)
                   deleteMessageEl.innerHTML = "Order deleted";
                 }
               
